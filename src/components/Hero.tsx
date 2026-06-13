@@ -36,15 +36,33 @@ export default function Hero() {
         <div className="absolute top-[40%] right-[10%] w-96 h-96 bg-purple-600/10 rounded-full blur-[120px]" />
       </div>
 
+      {/* Right Background Image (Absolutely positioned to fill the right half flawlessly) */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute top-0 right-0 w-full lg:w-[60%] h-full z-0 opacity-30 lg:opacity-100 pointer-events-none"
+      >
+        <img 
+          src="/desk.png" 
+          alt="Kiran at Desk" 
+          className="w-full h-full object-cover object-left"
+        />
+        {/* Gradients to fade the image perfectly into the #030010 background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#030010] via-[#030010]/50 to-transparent lg:via-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#030010] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#030010] via-transparent to-transparent" />
+      </motion.div>
+
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full h-full flex flex-col justify-center">
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-12 lg:gap-8 items-center h-full">
+        <div className="flex flex-col lg:flex-row items-center h-full">
           
           {/* Left Content */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center text-center lg:items-start lg:text-left gap-3 sm:gap-6 mt-4 sm:mt-0"
+            className="flex flex-col items-center text-center lg:items-start lg:text-left gap-3 sm:gap-6 mt-4 sm:mt-0 w-full lg:w-[55%]"
           >
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -104,7 +122,7 @@ export default function Hero() {
                     key={i}
                     href="#" 
                     whileHover={{ y: -5, color: '#00e1ff' }}
-                    className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:border-cyan-400 transition-colors"
+                    className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:border-cyan-400 transition-colors bg-[#030010]/50 backdrop-blur-sm"
                   >
                     <Icon size={18} />
                   </motion.a>
@@ -113,24 +131,6 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Profile Image */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative flex justify-center lg:justify-end items-center mt-8 lg:mt-0 w-full"
-          >
-            {/* Edge fading mask wrapper so the image blends seamlessly into the dark background */}
-            <div className="relative w-full max-w-lg lg:max-w-2xl aspect-[4/5] sm:aspect-square lg:aspect-[4/5] mx-auto rounded-3xl overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 100%)' }}>
-              <img 
-                src="/desk.png" 
-                alt="Kiran at Desk" 
-                className="w-full h-full object-cover object-center scale-105"
-              />
-              {/* Optional: Add a subtle overlay glow to match the neon vibe */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 mix-blend-overlay pointer-events-none" />
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

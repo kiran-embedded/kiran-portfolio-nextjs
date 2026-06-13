@@ -57,7 +57,7 @@ export default function Skills() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-wrap gap-4 sm:gap-6 justify-center lg:justify-start"
+            className="flex flex-wrap gap-4 sm:gap-6 justify-center"
           >
             {skills.map((skill, index) => {
               const Icon = skill.icon;
