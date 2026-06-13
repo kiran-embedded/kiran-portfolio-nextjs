@@ -58,11 +58,11 @@ export default function About() {
             className="relative z-10 flex flex-col gap-6"
           >
             <h4 className="text-cyan-400 font-bold uppercase tracking-widest text-sm">About Me</h4>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               Who <span className="text-cyan-400">I am?</span>
             </h2>
 
-            <div className="space-y-6 text-gray-400 text-lg leading-relaxed mt-4">
+            <div className="space-y-6 text-gray-400 text-base sm:text-lg leading-relaxed mt-4">
               <p>
                 Hello! I&apos;m Kiran, a <span className="text-white font-semibold">Physics Graduate</span> and 
                 <span className="text-cyan-400 font-semibold"> MCA Aspirant</span> with an intense passion for building 
@@ -122,9 +122,9 @@ export default function About() {
               {/* Workspace Container */}
               <div className="relative w-full h-[220px] sm:h-[300px] lg:h-[400px] rounded-xl overflow-hidden z-10 bg-[#020617]">
                 
-                {/* Hardware Accelerated HTML Blurs for extreme performance */}
-                <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/10 blur-[80px] rounded-full pointer-events-none transform-gpu" />
-                <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full pointer-events-none transform-gpu" />
+                {/* Standard blurs (without transform-gpu to prevent Android WebView white-box bug) */}
+                <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/10 blur-3xl rounded-full pointer-events-none" />
+                <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500/10 blur-3xl rounded-full pointer-events-none" />
 
                 <svg width="100%" height="100%" viewBox="0 0 800 500" className="absolute inset-0 z-10">
                   {/* Desk */}

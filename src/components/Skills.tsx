@@ -2,15 +2,19 @@
 
 import { motion, Variants } from 'framer-motion';
 
+import { FaHtml5, FaCss3Alt, FaPython, FaGithub, FaJsSquare } from 'react-icons/fa';
+import { SiC, SiArduino } from 'react-icons/si';
+import { VscVscode } from 'react-icons/vsc';
+
 const skills = [
-  { name: 'HTML', color: 'from-orange-500 to-red-500', icon: 'H' },
-  { name: 'CSS', color: 'from-blue-500 to-cyan-500', icon: 'C' },
-  { name: 'JavaScript', color: 'from-yellow-400 to-yellow-600', icon: 'JS' },
-  { name: 'Python', color: 'from-blue-500 to-yellow-500', icon: 'Py' },
-  { name: 'C', color: 'from-blue-600 to-blue-800', icon: 'C' },
-  { name: 'Git & GitHub', color: 'from-gray-600 to-gray-800', icon: 'Gt' },
-  { name: 'Arduino', color: 'from-teal-500 to-teal-700', icon: 'Ar' },
-  { name: 'VS Code', color: 'from-blue-400 to-blue-600', icon: 'VS' },
+  { name: 'HTML', color: 'from-orange-500 to-red-500', icon: FaHtml5 },
+  { name: 'CSS', color: 'from-blue-500 to-cyan-500', icon: FaCss3Alt },
+  { name: 'JavaScript', color: 'from-yellow-400 to-yellow-600', icon: FaJsSquare },
+  { name: 'Python', color: 'from-blue-500 to-yellow-500', icon: FaPython },
+  { name: 'C', color: 'from-blue-600 to-blue-800', icon: SiC },
+  { name: 'Git & GitHub', color: 'from-gray-600 to-gray-800', icon: FaGithub },
+  { name: 'Arduino', color: 'from-teal-500 to-teal-700', icon: SiArduino },
+  { name: 'VS Code', color: 'from-blue-400 to-blue-600', icon: VscVscode },
 ];
 
 const containerVariants: Variants = {
@@ -24,11 +28,12 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 30, scale: 0.8 },
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 }
+    scale: 1,
+    transition: { type: "spring", stiffness: 300, damping: 20 }
   }
 };
 
@@ -41,7 +46,7 @@ export default function Skills() {
           {/* Header */}
           <div className="lg:w-1/4">
             <h4 className="text-cyan-400 font-bold uppercase tracking-widest text-sm mb-2">My Skills</h4>
-            <h2 className="text-4xl font-bold text-white mb-4">Tech Stack</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Tech Stack</h2>
             <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full" />
           </div>
 
@@ -53,26 +58,36 @@ export default function Skills() {
             viewport={{ once: true, margin: "-100px" }}
             className="lg:w-3/4 flex flex-wrap gap-4 lg:gap-6 justify-center lg:justify-start"
           >
-            {skills.map((skill) => (
-              <motion.div
-                key={skill.name}
-                variants={itemVariants}
-                whileHover={{ y: -10, scale: 1.05 }}
-                className="group relative flex flex-col items-center justify-center gap-3 w-28 h-32 lg:w-32 lg:h-36 glass-panel rounded-2xl cursor-pointer overflow-hidden transition-all duration-300 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(0,225,255,0.2)]"
-              >
-                {/* Glow Background on hover */}
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br ${skill.color} transition-opacity duration-300`} />
-                
-                {/* Icon Placeholder (Since we don't have SVGs downloaded, we use text styling to match the image's layout) */}
-                <div className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-xl text-white bg-gradient-to-br ${skill.color} shadow-lg`}>
-                  {skill.icon}
-                </div>
-                
-                <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
-                  {skill.name}
-                </span>
-              </motion.div>
-            ))}
+            {skills.map((skill, index) => {
+              const Icon = skill.icon;
+              return (
+                <motion.div
+                  key={skill.name}
+                  variants={itemVariants}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity, 
+                    repeatType: "reverse", 
+                    ease: "easeInOut",
+                    delay: index * 0.2
+                  }}
+                  whileHover={{ scale: 1.1, rotate: [-2, 2, 0], transition: { duration: 0.3 } }}
+                  className="group relative flex flex-col items-center justify-center gap-3 w-24 h-28 sm:w-28 sm:h-32 lg:w-32 lg:h-36 glass-panel rounded-2xl cursor-pointer overflow-hidden transition-all duration-300 hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(0,225,255,0.3)]"
+                >
+                  {/* Glow Background on hover */}
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-br ${skill.color} transition-opacity duration-300`} />
+                  
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-3xl text-white bg-gradient-to-br ${skill.color} shadow-lg shadow-black/50 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon />
+                  </div>
+                  
+                  <span className="text-xs sm:text-sm font-semibold text-gray-300 group-hover:text-white transition-colors">
+                    {skill.name}
+                  </span>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
         

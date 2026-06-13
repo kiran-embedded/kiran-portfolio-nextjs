@@ -38,7 +38,7 @@ export default function Projects() {
         <div className="flex justify-between items-end mb-12">
           <div>
             <h4 className="text-cyan-400 font-bold uppercase tracking-widest text-sm mb-2">Projects</h4>
-            <h2 className="text-4xl font-bold text-white flex items-center gap-2">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white flex items-center gap-2">
               Things I've Built 🚀
             </h2>
             <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full mt-4" />

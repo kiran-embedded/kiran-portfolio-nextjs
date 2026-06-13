@@ -31,10 +31,10 @@ export default function Footer() {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 z-0" />
           
           <div className="relative z-10 text-center md:text-left">
-            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white mb-2">
               Let's build something
             </h2>
-            <h2 className="text-3xl lg:text-5xl font-bold text-cyan-400 font-serif italic">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-cyan-400 font-serif italic">
               amazing together.
             </h2>
           </div>
