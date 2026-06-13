@@ -123,7 +123,7 @@ export default function Hero() {
             {/* Edge fading mask wrapper so the image blends seamlessly into the dark background */}
             <div className="relative w-full max-w-lg lg:max-w-2xl aspect-[4/5] sm:aspect-square lg:aspect-[4/5] mx-auto rounded-3xl overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 100%)' }}>
               <img 
-                src="/profile.png" 
+                src="/desk.png" 
                 alt="Kiran at Desk" 
                 className="w-full h-full object-cover object-center scale-105"
               />
