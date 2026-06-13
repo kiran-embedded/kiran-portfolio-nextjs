@@ -41,12 +41,12 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute top-0 right-0 w-full lg:w-[70%] h-full z-0 opacity-40 lg:opacity-70 pointer-events-none mix-blend-screen"
+        className="absolute top-0 right-0 w-full lg:w-[85%] h-full z-0 opacity-40 lg:opacity-70 pointer-events-none mix-blend-screen"
       >
         <img 
           src="/desk.png" 
           alt="Kiran at Desk" 
-          className="w-full h-full object-cover object-center lg:object-right"
+          className="w-full h-full object-cover object-center"
         />
         {/* Gradients to fade the image perfectly into the #030010 background */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#030010] via-[#030010]/80 to-transparent lg:via-transparent" />

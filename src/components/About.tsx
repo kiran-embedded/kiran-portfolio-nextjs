@@ -49,7 +49,7 @@ export default function About() {
     <section id="about" ref={containerRef} className="relative py-24 w-full overflow-hidden">
       
       {/* Animated SVG Wave Divider */}
-      <div className="absolute top-0 left-0 w-full h-32 overflow-hidden -translate-y-1/2 pointer-events-none z-0">
+      <div className="absolute top-0 left-0 w-full h-32 overflow-hidden pointer-events-none z-0 opacity-50">
         <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
           <motion.path 
             d="M0,160 Q360,320 720,160 T1440,160" 
