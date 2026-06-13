@@ -29,7 +29,7 @@ export default function Hero() {
   }, [currentText, isDeleting, titleIndex]);
 
   return (
-    <section id="home" className="relative h-[100dvh] sm:min-h-screen flex items-center pt-20 pb-4 sm:pt-24 sm:pb-12 overflow-hidden">
+    <section id="home" className="relative min-h-[100dvh] flex items-center pt-24 pb-12 sm:pt-24 sm:pb-12 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[20%] left-[10%] w-72 h-72 bg-cyan-500/10 rounded-full blur-[100px]" />
@@ -46,7 +46,7 @@ export default function Hero() {
         <img 
           src="/desk.png" 
           alt="Kiran at Desk" 
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-[80%_center] lg:object-center"
         />
         {/* Gradients to fade the image perfectly into the #030010 background */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#030010] via-[#030010]/80 to-transparent lg:via-transparent" />
