@@ -2,19 +2,21 @@
 
 import { motion, Variants } from 'framer-motion';
 
-import { FaHtml5, FaCss3Alt, FaPython, FaGithub, FaJsSquare } from 'react-icons/fa';
-import { SiC, SiArduino } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaPython, FaGithub, FaJsSquare, FaReact, FaNodeJs, FaLinux } from 'react-icons/fa';
+import { SiArduino } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 
 const skills = [
-  { name: 'HTML', color: 'from-orange-500 to-red-500', icon: FaHtml5 },
-  { name: 'CSS', color: 'from-blue-500 to-cyan-500', icon: FaCss3Alt },
+  { name: 'HTML5', color: 'from-orange-500 to-red-500', icon: FaHtml5 },
+  { name: 'CSS3', color: 'from-blue-500 to-cyan-500', icon: FaCss3Alt },
   { name: 'JavaScript', color: 'from-yellow-400 to-yellow-600', icon: FaJsSquare },
   { name: 'Python', color: 'from-blue-500 to-yellow-500', icon: FaPython },
-  { name: 'C', color: 'from-blue-600 to-blue-800', icon: SiC },
+  { name: 'React', color: 'from-cyan-400 to-blue-500', icon: FaReact },
+  { name: 'Node.js', color: 'from-green-500 to-green-700', icon: FaNodeJs },
   { name: 'Git & GitHub', color: 'from-gray-600 to-gray-800', icon: FaGithub },
   { name: 'Arduino', color: 'from-teal-500 to-teal-700', icon: SiArduino },
   { name: 'VS Code', color: 'from-blue-400 to-blue-600', icon: VscVscode },
+  { name: 'Linux', color: 'from-yellow-500 to-orange-500', icon: FaLinux },
 ];
 
 const containerVariants: Variants = {
@@ -42,12 +44,11 @@ export default function Skills() {
     <section id="skills" className="relative py-24 bg-[#0a0b22]/50 border-y border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
-        <div className="flex flex-col lg:flex-row gap-12 items-start lg:items-center">
+        <div className="flex flex-col gap-8">
           {/* Header */}
-          <div className="lg:w-1/4">
-            <h4 className="text-cyan-400 font-bold uppercase tracking-widest text-sm mb-2">My Skills</h4>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Tech Stack</h2>
-            <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full" />
+          <div>
+            <h4 className="text-cyan-400 font-bold uppercase tracking-widest text-sm mb-2">.MY SKILLS</h4>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">Tech Stack</h2>
           </div>
 
           {/* Skills Grid */}
@@ -56,7 +57,7 @@ export default function Skills() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="lg:w-3/4 flex flex-wrap gap-4 lg:gap-6 justify-center lg:justify-start"
+            className="flex flex-wrap gap-4 sm:gap-6 justify-center lg:justify-start"
           >
             {skills.map((skill, index) => {
               const Icon = skill.icon;

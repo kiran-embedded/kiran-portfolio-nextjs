@@ -10,7 +10,9 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  width: 1024,
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export const metadata: Metadata = {
