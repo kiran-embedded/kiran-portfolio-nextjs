@@ -41,17 +41,18 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute top-0 right-0 w-full lg:w-[60%] h-full z-0 opacity-30 lg:opacity-100 pointer-events-none"
+        className="absolute top-0 right-0 w-full lg:w-[70%] h-full z-0 opacity-40 lg:opacity-70 pointer-events-none mix-blend-screen"
       >
         <img 
           src="/desk.png" 
           alt="Kiran at Desk" 
-          className="w-full h-full object-cover object-left"
+          className="w-full h-full object-cover object-center lg:object-right"
         />
         {/* Gradients to fade the image perfectly into the #030010 background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#030010] via-[#030010]/50 to-transparent lg:via-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#030010] via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#030010] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#030010] via-[#030010]/80 to-transparent lg:via-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#030010] via-transparent to-[#030010]/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#030010] via-transparent to-[#030010]/40" />
+        <div className="absolute inset-0 bg-[#00e1ff]/5 mix-blend-overlay" />
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full h-full flex flex-col justify-center">
@@ -82,7 +83,15 @@ export default function Hero() {
               <span className="text-gradient-purple relative inline-block text-sm sm:text-2xl lg:text-3xl mt-1 sm:mt-4">
                 IoT Enthusiast • MCA Aspirant
                 <svg className="absolute w-full h-3 -bottom-2 left-0 text-cyan-400" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 15 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
+                  <motion.path 
+                    d="M0 5 Q 50 15 100 5" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    fill="none" 
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+                  />
                 </svg>
               </span>
             </h2>
@@ -133,6 +142,23 @@ export default function Hero() {
 
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
+      >
+        <span className="text-[10px] text-gray-500 uppercase tracking-widest">Scroll</span>
+        <div className="w-[1px] h-12 bg-gray-800 relative overflow-hidden">
+          <motion.div 
+            className="w-full h-1/2 bg-cyan-400 absolute top-0"
+            animate={{ y: [0, 48] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }
