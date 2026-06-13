@@ -55,13 +55,13 @@ export default function Hero() {
               <span className="text-sm font-medium text-cyan-400">Hi, I'm 👋</span>
             </motion.div>
 
-            <h1 className="text-6xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-[1.1]">
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black tracking-tight text-white mb-2 leading-[1.1]">
               <span className="text-gradient">KIRAN</span>
             </h1>
 
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-300">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-300">
               Aspiring Full-Stack Developer <br/>
-              <span className="text-gradient-purple relative inline-block text-2xl lg:text-3xl mt-4">
+              <span className="text-gradient-purple relative inline-block text-lg sm:text-2xl lg:text-3xl mt-4">
                 IoT Enthusiast • MCA Aspirant
                 <svg className="absolute w-full h-3 -bottom-2 left-0 text-cyan-400" viewBox="0 0 100 10" preserveAspectRatio="none">
                   <path d="M0 5 Q 50 15 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
@@ -120,7 +120,7 @@ export default function Hero() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="relative flex justify-center lg:justify-end items-center"
           >
-            <div className="relative w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] flex items-center justify-center">
+            <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] flex items-center justify-center mx-auto mt-8 lg:mt-0">
               
               {/* Orbital Rings */}
               <div className="absolute inset-0 w-full h-full animate-[spin_20s_linear_infinite]">

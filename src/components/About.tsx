@@ -47,7 +47,7 @@ export default function About() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left: Text Content */}
           <motion.div
@@ -120,7 +120,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 z-0 rounded-2xl pointer-events-none" />
               
               {/* Workspace Container */}
-              <div className="relative w-full h-[300px] lg:h-[400px] rounded-xl overflow-hidden z-10 bg-[#020617]">
+              <div className="relative w-full h-[220px] sm:h-[300px] lg:h-[400px] rounded-xl overflow-hidden z-10 bg-[#020617]">
                 
                 {/* Hardware Accelerated HTML Blurs for extreme performance */}
                 <div className="absolute top-0 left-0 w-64 h-64 bg-cyan-500/10 blur-[80px] rounded-full pointer-events-none transform-gpu" />
